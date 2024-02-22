@@ -47,12 +47,12 @@ public class List {
     /** GIVE Textual representation of this list. */
     public String toString() {
         Node current = first;
-        String result = "";
+        String result = "(";
         for (int i = 0; i < size; i++){
             result += current.cp.toString() + " ";
             current = current.next;
         }
-        return "(" + result + ")";
+        return result + ")";
     }
 
     /** Returns the index of the first CharData object in this list
