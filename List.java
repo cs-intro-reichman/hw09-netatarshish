@@ -49,7 +49,7 @@ public class List {
         Node current = first;
         String result = "";
         for (int i = 0; i < size; i++){
-            result += current.cp.toString(printlevel);
+            result += current.cp.toString(printlevel) + " ";
             current = current.next;
         }
         return "(" + result + ")";

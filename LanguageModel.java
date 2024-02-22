@@ -98,15 +98,24 @@ public class LanguageModel {
     for(int j = 0; j < size; j++){
     	numberOfChars += probs.get(j).count;
     }
+    for(int i = 0; i < size; i++)
+        {
+            probs.get(i).p = (double) (probs.get(i).count) / (double) (numberOfChars);;
+        }
+    probs.getFirst().cp = probs.getFirst().p;
+    for(int y = 1; y < size; y++)
+        {
+            probs.get(y).cp = probs.get(y-1).cp+probs.get(y).p;
+        }
 
-    if (size != 0){
-    	double cp = 0;
-    	for(int i = 0; i < size; i++) {
-    		CharData item = probs.get(i);
-    		double p = (double) (item.count) / (double) (numberOfChars);
-    		cp += p;
-    		item.p = p;
-    		item.cp = cp;
+    //if (size != 0){
+    //	double cp = 0;
+    //	for(int i = 0; i < size; i++) {
+    //		CharData item = probs.get(i);
+    //		double p = (double) (item.count) / (double) (numberOfChars);
+    //		cp += p;
+    //		item.p = p;
+    //		item.cp = cp;
     }
     }
 
