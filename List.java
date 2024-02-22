@@ -45,11 +45,11 @@ public class List {
 }
     
     /** GIVE Textual representation of this list. */
-    public String toString(int printlevel) {
+    public String toString() {
         Node current = first;
         String result = "";
         for (int i = 0; i < size; i++){
-            result += current.cp.toString(printlevel) + " ";
+            result += current.cp.toString() + " ";
             current = current.next;
         }
         return "(" + result + ")";

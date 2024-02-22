@@ -95,12 +95,11 @@ public class LanguageModel {
 	public void calculateProbabilities(List probs) {				
     int size = probs.getSize();
     int numberOfChars = 0;
+    double cp = 0;
     for(int j = 0; j < size; j++){
     	numberOfChars += probs.get(j).count;
     }
-
-    if (size != 0){
-    	double cp = 0;
+    	
     	for(int i = 0; i < size; i++) {
     		CharData item = probs.get(i);
     		double p = (double) (item.count) / (double) (numberOfChars);
@@ -108,7 +107,8 @@ public class LanguageModel {
     		item.p = p;
     		item.cp = cp;
     }
-    }
+
+    
 
     
 }
