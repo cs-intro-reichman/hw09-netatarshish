@@ -149,26 +149,14 @@ public class LanguageModel {
     //To be removed
     //int printable = 0 ;
 
-    while (generatedText.length() < textLength) {
+    while (generatedText.length() <= textLength-windowLength) {
         List charList = CharDataMap.get(window);
 
         if (charList == null) {
             System.out.println("Break");
             break;
         }
-        // To be removed
-    	//if (window.equals("changed") || ((0 < printable) && (printable < 4)))
-    	//	{
-    	//		System.out.println("Window is " + window);
-    	//		if (window.startsWith("anged"))
-    	//			System.out.println("Found");
-    	///		printable++;
-    		//}
-    	 //else 
-    	 	//{printable = 0 ;}
-    	//////
-
-
+       
         char nextChar = getRandomChar(charList);
         generatedText.append(nextChar);
         window = window.substring(1) + nextChar;
