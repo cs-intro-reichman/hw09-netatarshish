@@ -149,7 +149,7 @@ public class LanguageModel {
     //To be removed
     //int printable = 0 ;
 
-    while (generatedText.length() <= textLength-windowLength) {
+    while (generatedText.length()-windowLength < textLength) {
         List charList = CharDataMap.get(window);
 
         if (charList == null) {
