@@ -75,17 +75,14 @@ public class List {
      *  increments its counter. Otherwise, adds a new CharData object with the
      *  given chr to the beginning of this list. */
     public void update(char chr) {
-        int index=indexOf(chr);
-        Node current=this.first;
-        if(index==-1)
-        {
+        Node current = first;
+        int placeOfchr = indexOf(chr);
+        if(placeOfchr == -1){
            this.addFirst(chr);
         }
-        else
-        {
-            for(int i=0;i<index;i++)
-            {
-                current=current.next;
+        else{
+            for(int i = 0; i < placeOfchr ; i++){
+                current = current.next;
             }
             current.cp.count++;
         }
