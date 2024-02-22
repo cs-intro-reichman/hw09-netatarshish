@@ -52,7 +52,7 @@ public class List {
             result += current.cp.toString() + " ";
             current = current.next;
         }
-        return result + ")";
+        return result.subString(0,result.length-1) + ")";
     }
 
     /** Returns the index of the first CharData object in this list
